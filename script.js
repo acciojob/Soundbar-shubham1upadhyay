@@ -1,21 +1,18 @@
-const btnsxyz = Array.from(document.querySelectorAll(".btn"))
-function stopSounds(){
-    for(var i=0; i<btnsxyz.length;i++){
-        const sound = document.getElementById(btnsxyz[i].innerText)
-        sound.pause()
-        sound.currentTime = 0
-    }
+const audio = new Audio();
+let playing = null;
+
+function playSound(sounds) {
+  if (playing !== null) {
+    stopSound();
+  }
+
+  audio.src = `sounds/${sounds}`;
+  audio.play();
+  playing = sounds;
 }
-function playSound(btn){
-    btn.addEventListener("click",function(){
-        stopSounds()
-        document.getElementById(btn.innerText).play()
-    })
+
+function stopSounds() {
+  audio.pause();
+  audio.currentTime = 0;
+  playing = null;
 }
-for(var i=0;i<btnsxyz.length;i++){
-    var buttonxyz = btnsxyz[i]
-    playSound(buttonxyz)
-}
-document.querySelector(".stop").addEventListener("click",function(){
-    stopSounds()
-})
