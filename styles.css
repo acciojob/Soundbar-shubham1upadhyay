@@ -11,5 +11,11 @@ button{
 	justify-items:space-between;
 	margin:30px;
 	text-align:center;
-	margin-top:20%;
+	margin: 10px;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+}
+.stop {
+  background-color: red;
 }
