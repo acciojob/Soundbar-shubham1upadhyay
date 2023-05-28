@@ -1,6 +1,6 @@
 const btnsxyz = Array.from(document.querySelectorAll(".btn"))
 function stopSounds(){
-    for(var i=0;i<btnsxyz.length;i++){
+    for(var i=0; i<btnsxyz.length;i++){
         const sound = document.getElementById(btnsxyz[i].innerText)
         sound.pause()
         sound.currentTime = 0
